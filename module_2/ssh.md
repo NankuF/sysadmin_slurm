@@ -12,7 +12,8 @@ sudo systemctl restart sshd && sudo systemctl status sshd
 
 3) ssh-copy-id -i ./test-key vagrant@192.168.250.10
 4) Ограничьте доступ к серверу, разрешив вход только по ключам и запретив вход по паролю в конфигурации
-sudo nano /etc/ssh/sshd_config PasswordAuthentication no
+sudo nano /etc/ssh/sshd_config
+PasswordAuthentication no
 PermitRootLogin no
 PermitEmptyPasswords no
 PubkeyAuthentication yes
@@ -44,6 +45,8 @@ Host vagrant
     IdentityFile ~/.ssh/test_key
     Port 22
 
+## Команда для входа
+ssh nanku@192.168.250.11 -i test-key
 
 ## Добавление ключа вручную, когда PasswordAuthentication no  => ssh-copy-id не сработает
 

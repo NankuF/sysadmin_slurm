@@ -18,6 +18,9 @@ sudo apt remove tree
 удалить все что связано с пакетом
 sudo apt purge tree
 
+комбинация удаления всего
+sudo apt remove --purge tree
+
 удалить неиспользуемые зависимости (как в программировании переменная на которую никто не ссылается)
 sudo apt autoremove
 
